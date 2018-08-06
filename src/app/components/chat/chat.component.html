@@ -1,0 +1,21 @@
+<div class="text-center">
+  <img src="{{_cs.usuario.foto}}" class="img-thumbnail shadow-sm" alt="_cs.usuario.nombre" width="100">
+</div>
+<h3>{{_cs.usuario.nombre}}</h3>
+<hr>
+
+<div class="app-mensajes" id="app-mensajes">
+  <div class="p-2" *ngFor="let chat of _cs.chats" [ngClass]="{'text-right': _cs.usuario.uid == chat.uid}">
+    <span class="badge badge-pill badge-primary" [ngClass]="{'badge-primary': _cs.usuario.uid == chat.uid, 'badge-secondary': _cs.usuario.uid != chat.uid}">{{chat.username}}</span>
+    <p class="text-muted">Cuando: {{chat.fecha}}</p>
+    <p>{{ chat.mensaje }}</p>
+  </div>
+</div>
+
+<div class="input-group my-3">
+   
+  <input type="text" class="form-control" name="mensaje" [(ngModel)] = "mensaje" (keyup.enter) = "sendMsg()" placeholder="Mensaje...">
+  <div class="input-group-append">
+    <button class="btn btn-primary" type="button" id="button-addon2" (click) = "sendMsg()">Enviar</button>
+  </div>
+</div>
