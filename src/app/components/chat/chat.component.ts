@@ -9,36 +9,36 @@ import { ChatService } from '../../services/chat.service';
 })
 export class ChatComponent implements OnInit {
 
-  mensaje : string = "";
-  elemento : any;
+  mensaje: string;
+  elemento: any;
 
-  constructor( public _cs: ChatService ) { 
+  constructor( public _cs: ChatService ) {
     this._cs.loadMsgs().subscribe(() => {
-      setTimeout(()=>{
+      setTimeout(() => {
         this.elemento.scrollTop = this.elemento.scrollHeight;
-      },20);
+      }, 20);
     });
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.elemento = document.getElementById('app-mensajes');
   }
 
-  sendMsg(){
-    //Esta función recoge lo que escribimos en el input
+  sendMsg() {
+    // Esta función recoge lo que escribimos en el input
     console.log(this.mensaje);
 
-    if(this.mensaje.length === 0){
-      return; //no devuelve nada. Por tanto, no agrega nada a la db.
+    if (this.mensaje.length === 0) {
+      return; // no devuelve nada. Por tanto, no agrega nada a la db.
     }
     this._cs.addMsgs(this.mensaje)
             .then(
-              //Mensaje enviado. Vaciamos el input.
-              ()=>this.mensaje = ""
+              // Mensaje enviado. Vaciamos el input.
+              () => this.mensaje = ''
             )
             .catch(
-              //Error al enviar el mensaje. Mostramos error.
-              ()=>console.error('Error al enviar')
+              // Error al enviar el mensaje. Mostramos error.
+              () => console.error('Error al enviar')
             );
   }
 }

@@ -5,12 +5,12 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyCxiuUhCEkGlzsBCgFe2QSzsZ4Ks9Zkem8",
-    authDomain: "iggynote-96cf7.firebaseapp.com",
-    databaseURL: "https://iggynote-96cf7.firebaseio.com",
-    projectId: "iggynote-96cf7",
-    storageBucket: "",
-    messagingSenderId: "971195185468"
+    apiKey: 'AIzaSyCxiuUhCEkGlzsBCgFe2QSzsZ4Ks9Zkem8',
+    authDomain: 'iggynote-96cf7.firebaseapp.com',
+    databaseURL: 'https://iggynote-96cf7.firebaseio.com',
+    projectId: 'iggynote-96cf7',
+    storageBucket: '',
+    messagingSenderId: '971195185468'
   }
 };
 

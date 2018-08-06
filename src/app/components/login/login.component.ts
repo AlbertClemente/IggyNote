@@ -7,10 +7,11 @@ import { ChatService } from '../../services/chat.service';
 })
 export class LoginComponent {
 
-  constructor(public _cs:ChatService) { }
+  constructor(public _cs: ChatService) { }
 
-  //Método iniciar sesión
-  login( platformProvider: string ){
+  // Método iniciar sesión
+
+  login( platformProvider: string ) {
     console.log(platformProvider);
     this._cs.login(platformProvider);
   }
