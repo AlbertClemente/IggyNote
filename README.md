@@ -1,3 +1,3 @@
 # IggyNote
 
-Proyecto personal para estudio de integración de Angular con Firebase.
+A chat app with Angular and Firebase.
